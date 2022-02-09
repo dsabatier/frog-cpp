@@ -16,7 +16,7 @@ private:
     bool _showPressStartText{};
     bool _transitioning = false;
     float _transitionTimer{};
-    float _transitionTime = 5;
+    float _transitionTime = 2.5;
     bool _goNext = false;
     Music _song{};
     Sound _selectSound{};
