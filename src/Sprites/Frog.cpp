@@ -14,7 +14,7 @@ void Frog::Update() {
     _position = Vector2Add(_position, Vector2Scale(input, 10));
 }
 
-void Frog::Draw() {
+void Frog::Draw() const {
     DrawRectangle(floor(_position.x), floor(_position.y), 10, 10, GREEN);
 }
 

@@ -7,7 +7,7 @@ class Frog : public Sprite {
 public:
     Frog(int x, int y);
     void Update() override;
-    void Draw() override;
+    void Draw() const override;
 private:
     Vector2 _position{0,0};
 

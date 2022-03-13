@@ -14,7 +14,7 @@ void Car::Update() {
     _position.x += _direction * _speed * GetFrameTime();
 }
 
-void Car::Draw() {
+void Car::Draw() const {
     DrawRectangle(_position.x, _position.y, 25, 15, YELLOW);
 }
 

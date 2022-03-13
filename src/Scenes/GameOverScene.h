@@ -8,7 +8,7 @@ public:
 
     void Update() override;
     void Draw() override;
-    Scene* GetNext() override;
+    GameState GetNext() const override;
 
 private:
     float _timer;

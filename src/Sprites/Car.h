@@ -8,7 +8,7 @@ public:
     Car(int x, int y, int width, int height, float speed);
 
     void Update() override;
-    void Draw() override;
+    void Draw() const override;
 private:
     Vector2 _position{};
     Vector2 _size{1,1};

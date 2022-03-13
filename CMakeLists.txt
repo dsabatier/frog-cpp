@@ -13,7 +13,7 @@ set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
 
 add_subdirectory(libs/raylib)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Scene.cpp src/Scene.h src/GameScene.cpp src/GameScene.h src/MainMenuScene.cpp src/MainMenuScene.h src/GameOverScene.cpp src/GameOverScene.h src/Frog.cpp src/Frog.h src/Sprite.cpp src/Sprite.h src/Car.cpp src/Car.h)
+add_executable(${PROJECT_NAME} src/main.cpp src/Scenes/Scene.h src/Scenes/GameScene.cpp src/Scenes/GameScene.h src/Scenes/MainMenuScene.cpp src/Scenes/MainMenuScene.h src/Scenes/GameOverScene.cpp src/Scenes/GameOverScene.h src/Sprites/Frog.cpp src/Sprites/Frog.h src/Sprites/Sprite.h src/Sprites/Car.cpp src/Sprites/Car.h src/UI/Menu.cpp src/UI/Menu.h src/UI/MenuItem.h src/GameState.cpp src/GameState.h)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
 target_compile_definitions(${PROJECT_NAME} PUBLIC ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/assets/") # Set the asset path macro to the absolute path on the dev machine

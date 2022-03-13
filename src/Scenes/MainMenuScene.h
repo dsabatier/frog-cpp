@@ -1,14 +1,16 @@
 #pragma once
 #include "Scene.h"
+#include "../UI/Menu.h"
 
 class MainMenuScene : public Scene {
 public:
     MainMenuScene(int width, int height);
+
     void Enter() override;
     void Exit() override;
     void Update() override;
     void Draw() override;
-    Scene* GetNext() override;
+    GameState GetNext() const override;
 
 private:
     float _blinkTimer{};
@@ -20,7 +22,11 @@ private:
     bool _goNext = false;
     Music _song{};
     Sound _selectSound{};
+    std::unique_ptr<Menu> _menu;
 
     void Blink();
+    void DrawSelectionIndicator() const;
+    void DrawMenu() const;
+    void DrawTitle() const;
 };
 
