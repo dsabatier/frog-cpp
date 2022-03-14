@@ -37,7 +37,7 @@ void MainMenuScene::Exit() {
 }
 
 void MainMenuScene::Update() {
-    Blink();
+
 
     if(IsKeyPressed(KEY_DOWN))
     {
@@ -54,6 +54,13 @@ void MainMenuScene::Update() {
         return;
     }
 
+    Blink();
+    Transition();
+
+    UpdateMusicStream(_song);
+}
+
+void MainMenuScene::Transition() {
     if(_transitioning)
     {
         _timeBetweenBlinks = 0.25f;
@@ -64,8 +71,6 @@ void MainMenuScene::Update() {
     {
         _goNext = true;
     }
-
-    UpdateMusicStream(_song);
 }
 
 void MainMenuScene::Draw() {
@@ -87,7 +92,7 @@ void MainMenuScene::DrawTitle() const {
 
 void MainMenuScene::DrawMenu() const {
     DrawSelectionIndicator();
-    int itemCount{2};
+    int itemCount{_menu->GetItemCount()};
     int topX{180};
     int spacing{20};
 
@@ -98,8 +103,16 @@ void MainMenuScene::DrawMenu() const {
 }
 
 void MainMenuScene::DrawSelectionIndicator() const {
+
+    float offset{20 * (float)_menu->GetSelectionIndex()};
     if(_showPressStartText)
-        DrawTriangle(Vector2{140, 188}, Vector2{135, 182}, Vector2{135, 192}, WHITE);
+    {
+        DrawTriangle(
+                Vector2{140, 188 + offset},
+                Vector2{135, 182 + offset},
+                Vector2{135, 192 + offset}, WHITE);
+    }
+
 }
 
 GameState MainMenuScene::GetNext() const {

@@ -11,7 +11,8 @@ public:
     void Select() const;
     std::string GetLabel(int index) const;
     int GetItemCount() const;
+    int GetSelectionIndex();
 private:
     std::vector<MenuItem> _menuItems;
-    int _currentSelection{0};
+    int _currentSelectionIndex{0};
 };

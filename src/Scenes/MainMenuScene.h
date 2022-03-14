@@ -28,5 +28,6 @@ private:
     void DrawSelectionIndicator() const;
     void DrawMenu() const;
     void DrawTitle() const;
+    void Transition();
 };
 
